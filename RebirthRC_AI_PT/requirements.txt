@@ -1,0 +1,21 @@
+# Python dependencies for Rebirth RC AI Offensive Security Tool
+# Core dependencies
+redis>=5.0.0
+openai>=1.12.0
+python-dotenv>=1.0.0
+
+# Network and system tools
+scapy>=2.5.0
+psutil>=5.9.0
+
+# GUI automation (Windows compatible)
+pyautogui>=0.9.54
+Pillow>=10.0.0
+
+# Additional utilities
+requests>=2.31.0
+
+# Note: 
+# - Scapy requires root/admin privileges for packet sniffing on some systems
+# - pyautogui/Pillow may require additional system libraries on Linux (X server)
+# - On Windows, most dependencies should work out of the box
