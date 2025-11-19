@@ -13,6 +13,7 @@ import json
 import random
 import os
 import base64
+import re
 from typing import List, Dict, Optional
 from pathlib import Path
 
@@ -37,6 +38,8 @@ class PayloadManager:
             payloads_dir: ไดเรกทอรีที่เก็บไฟล์ payloads
         """
         self.redis = redis_manager
+        # Compatibility for MockRedisManager which might not have a .db attribute directly
+        self._db = getattr(redis_manager, 'db', redis_manager)
         self.payloads_dir = Path(payloads_dir)
         self.payload_cache = {}
         self.stats = {
@@ -83,10 +86,10 @@ class PayloadManager:
         
         # เก็บใน Redis
         redis_key = f"PAYLOADS:{payload_type.upper()}"
-        self.redis.db.delete(redis_key)
+        self._db.delete(redis_key)
         
         if payloads:
-            self.redis.db.rpush(redis_key, *payloads)
+            self._db.rpush(redis_key, *payloads)
             self.payload_cache[payload_type] = payloads
             self.stats['loaded'] += len(payloads)
             print(f"[PayloadManager] Loaded {len(payloads)} {payload_type} payloads")
@@ -125,16 +128,21 @@ class PayloadManager:
         
         redis_key = f"PAYLOADS:{payload_type.upper()}"
         
+        # Prevent error on empty list
+        if self._db.llen(redis_key) == 0:
+            return None
+
         # ดึงจาก Redis
         if random_selection:
-            payload = self.redis.db.srandmember(redis_key) if \
-                      self.redis.db.type(redis_key) == b'set' else \
-                      self.redis.db.lindex(redis_key, random.randint(0, 
-                          self.redis.db.llen(redis_key) - 1))
+            # MockRedis might not support all commands, but this logic is safer
+            if hasattr(self._db, 'srandmember') and self._db.type(redis_key) == b'set':
+                 payload = self._db.srandmember(redis_key)
+            else:
+                 payload = self._db.lindex(redis_key, random.randint(0, self._db.llen(redis_key) - 1))
         else:
-            payload = self.redis.db.lpop(redis_key)
+            payload = self._db.lpop(redis_key)
             if payload:
-                self.redis.db.rpush(redis_key, payload)  # ใส่กลับไปท้ายคิว
+                self._db.rpush(redis_key, payload)  # ใส่กลับไปท้ายคิว
         
         if not payload:
             return None
@@ -185,28 +193,23 @@ class PayloadManager:
         if not payload or not isinstance(payload, str):
             return False
         
-        # Basic validation rules
+        # Use more robust regex for validation
         if payload_type == 'sqli':
-            # ต้องมี SQL keywords
-            sql_keywords = ['SELECT', 'UNION', 'OR', 'AND', '--', '/*']
-            return any(kw in payload.upper() for kw in sql_keywords)
+            # Looks for common SQL injection patterns
+            return bool(re.search(r"(\s(OR|AND|UNION)\s|'|--|/\*|\*\/)", payload, re.IGNORECASE))
         
         elif payload_type == 'xss':
-            # ต้องมี script tags หรือ event handlers
-            xss_patterns = ['<script', 'onerror', 'onload', 'javascript:']
-            return any(pattern in payload.lower() for pattern in xss_patterns)
+            # Looks for script tags, event handlers, or javascript protocol
+            return bool(re.search(r"(<script|onerror|onload|javascript:)", payload, re.IGNORECASE))
         
         elif payload_type == 'rce':
-            # ต้องมี command execution patterns
-            rce_patterns = ['&&', '||', ';', '|', '`', '$(']
-            return any(pattern in payload for pattern in rce_patterns)
+            # Looks for shell command separators or execution syntax
+            return bool(re.search(r"[;&|`$()]", payload))
         
         elif payload_type == 'fuzzing':
-            # Fuzzing payloads อาจเป็นอะไรก็ได้
             return len(payload) > 0
         
         elif payload_type == 'stego':
-            # Stego payloads ควรเป็น base64 หรือ hex
             try:
                 base64.b64decode(payload)
                 return True
@@ -262,13 +265,13 @@ class PayloadManager:
             'type': payload_type,
             'success': success,
             'details': details,
-            'timestamp': self.redis.db.time()[0]
+            'timestamp': self._db.time()[0] if hasattr(self._db, 'time') else int(time.time())
         }
         
         # บันทึกใน Redis
         redis_key = f"PAYLOAD_RESULTS:{payload_type.upper()}"
-        self.redis.db.lpush(redis_key, json.dumps(result))
-        self.redis.db.ltrim(redis_key, 0, 999)  # เก็บแค่ 1000 รายการล่าสุด
+        self._db.lpush(redis_key, json.dumps(result))
+        self._db.ltrim(redis_key, 0, 999)  # เก็บแค่ 1000 รายการล่าสุด
         
         # Update stats
         if success:
@@ -288,7 +291,7 @@ class PayloadManager:
         # เพิ่มข้อมูลจำนวน payloads ใน Redis
         for payload_type in self.PAYLOAD_TYPES:
             redis_key = f"PAYLOADS:{payload_type.upper()}"
-            count = self.redis.db.llen(redis_key)
+            count = self._db.llen(redis_key)
             stats[f'{payload_type}_count'] = count
         
         return stats
@@ -362,12 +365,13 @@ class PayloadManager:
                     payloads.append(''.join(chr(random.randint(0, 255)) for _ in range(50)))
         
         # บันทึกลงไฟล์
-        filepath = self.payloads_dir / payload_type / f"{payload_type}_sample.txt"
+        # Corrected filename to match what load_payloads expects
+        filepath = self.payloads_dir / payload_type / f"{payload_type}_payloads.txt"
         with open(filepath, 'w', encoding='utf-8') as f:
             for payload in payloads:
                 f.write(f"{payload}\n")
         
-        print(f"[PayloadManager] Generated {count} sample {payload_type} payloads")
+        print(f"[PayloadManager] Generated {count} sample {payload_type} payloads to {filepath}")
         return filepath
 
 

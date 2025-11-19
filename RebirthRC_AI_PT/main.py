@@ -12,7 +12,7 @@ from config import (
     OPENAI_API_KEY,
     HIHG_API_KEY
 )
-from data_hub.redis_manager import RedisManager
+from data_hub.optimized_redis_manager import OptimizedRedisManager as RedisManager
 from mcp import RoleEngine
 from agents.planner_agent import PlannerAgent
 from agents.executor_agent import ExecutorAgent
@@ -79,10 +79,10 @@ def check_prerequisites():
     return True
 
 class Orchestrator:
-    def __init__(self):
+    def __init__(self, redis_manager):
         # 1. Initialize Redis Manager (Central Data Hub)
-        print("Initializing Redis Manager...")
-        self.redis_manager = RedisManager(REDIS_CONFIG)
+        print("Using Optimized Redis Manager...")
+        self.redis_manager = redis_manager
         self.agents = []
         self.agent_threads = []
         self.running = True
@@ -170,13 +170,32 @@ if __name__ == "__main__":
     if not check_prerequisites():
         print("\nStartup checks failed. Exiting.")
         sys.exit(1)
-    
+
     try:
-        # Ensure Redis server is running before executing
-        orchestrator = Orchestrator()
+        # Use Optimized Redis Manager with a connection pool
+        redis_manager = RedisManager(REDIS_CONFIG, pool_size=50)
+
+        # Subscribe to real-time alerts for vulnerabilities
+        def on_vulnerability(message):
+            print(f"\n[!!! REAL-TIME ALERT - VULNERABILITY DETECTED !!!]")
+            print(json.dumps(message, indent=2))
+            print("="*60)
+
+        redis_manager.subscribe('VULNERABILITIES', on_vulnerability)
+        redis_manager.start_listening()
+        print("\n✓ Subscribed to real-time vulnerability alerts.")
+
+        # Initialize and run the Orchestrator
+        orchestrator = Orchestrator(redis_manager)
         orchestrator.run()
+
     except Exception as e:
         print(f"\n✗ Fatal error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)
+    finally:
+        # Ensure the listener thread is stopped on exit
+        if 'redis_manager' in locals() and redis_manager.is_listening():
+            redis_manager.stop_listening()
+            print("\n✓ Stopped Redis listener.")

@@ -1,18 +1,20 @@
 from agents.base_agent import BaseAgent
 from tools.network_sniffer import NetworkSniffer
-from tools.observability import StructuredLogger, MetricsCollector
+from tools.observability import StructuredLogger, MetricsCollector, PerformanceMonitor
 from config import GAME_CONFIG, AGENT_POLL_INTERVAL
 import time
 import json
 from collections import defaultdict
 
+
 class ObserverAgent(BaseAgent):
     def __init__(self, redis_manager, config):
         super().__init__(redis_manager, config)
-        
+
         # Initialize observability
         self.logger = StructuredLogger(self.name, redis_manager=redis_manager)
         self.metrics = MetricsCollector(redis_manager)
+        self.monitor = PerformanceMonitor(self.metrics)
         
         # Intelligence: Pattern recognition and anomaly detection
         self.observed_patterns = []
@@ -32,7 +34,8 @@ class ObserverAgent(BaseAgent):
         while self.is_running():
             try:
                 # Capture packets with intelligent filtering
-                packets = NetworkSniffer.sniff_packets(count=10, filter_str=None)
+                with self.monitor.measure('packet_capture'):
+                    packets = NetworkSniffer.sniff_packets(count=10, filter_str=None)
 
                 if packets:
                     # Intelligent analysis of packets
@@ -216,7 +219,7 @@ class ObserverAgent(BaseAgent):
         # Pattern: Protocol dominance
         if packet_analysis['protocols']:
             dominant_protocol = max(packet_analysis['protocols'].items(), key=lambda x: x[1])
-            if dominant_protocol[1] > len(packet_analysis['total_packets']) * 0.7:
+            if dominant_protocol[1] > packet_analysis['total_packets'] * 0.7:
                 patterns.append({
                     'type': 'protocol_dominance',
                     'protocol': dominant_protocol[0],

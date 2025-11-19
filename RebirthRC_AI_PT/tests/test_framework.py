@@ -34,8 +34,8 @@ class TestConfig:
 
 
 class MockRedisManager:
-    """Mock Redis Manager สำหรับ testing"""
-    
+    """Mock Redis Manager for testing with extended functionality."""
+
     def __init__(self):
         self.data = {}
         self.lists = {}
@@ -43,54 +43,94 @@ class MockRedisManager:
         self.actions = []
         self.errors = []
         self.vulnerabilities = []
-    
+        # Compatibility for PayloadManager
+        self.db = self
+
     def get(self, key):
         return self.data.get(key)
-    
+
     def set(self, key, value):
         self.data[key] = value
-    
+
+    def delete(self, key):
+        if key in self.lists:
+            del self.lists[key]
+        if key in self.data:
+            del self.data[key]
+
+    def rpush(self, key, *values):
+        if key not in self.lists:
+            self.lists[key] = []
+        self.lists[key].extend(values)
+
+    def lpop(self, key):
+        if key in self.lists and self.lists[key]:
+            return self.lists[key].pop(0)
+        return None
+
+    def lindex(self, key, index):
+        if key in self.lists and -len(self.lists[key]) <= index < len(self.lists[key]):
+            return self.lists[key][index]
+        return None
+
+    def llen(self, key):
+        return len(self.lists.get(key, []))
+
+    def ltrim(self, key, start, end):
+        if key in self.lists:
+            self.lists[key] = self.lists[key][start:end+1]
+
+    def type(self, key):
+        if key in self.lists:
+            return b'list'
+        if key in self.data:
+            return b'string'
+        return b'none'
+
+    def time(self):
+        return (int(time.time()), 0)
+
     def get_state(self):
         return self.data.get('SYS:STATUS', 'IDLE')
-    
+
     def set_state(self, state):
         self.data['SYS:STATUS'] = state
-    
+
     def log_observation(self, agent_name, message):
         self.observations.append({
             'agent': agent_name,
             'message': message,
             'timestamp': time.time()
         })
-    
+
     def get_latest_observations(self, count=10):
         return self.observations[-count:]
-    
+
     def push_action(self, action):
         self.actions.append(action)
-    
+
     def pop_action(self):
         return self.actions.pop(0) if self.actions else None
-    
+
     def get_queue_size(self):
         return len(self.actions)
-    
+
     def set_error(self, agent_name, error_message):
         self.errors.append({
             'agent': agent_name,
             'message': error_message,
             'timestamp': time.time()
         })
-    
+
     def get_last_error(self):
         return self.errors[-1] if self.errors else None
-    
+
     def clear_error(self):
         self.errors.clear()
-    
+
     def add_vulnerability(self, vuln):
         self.vulnerabilities.append(vuln)
-    
+
     def get_vulnerabilities(self):
         return self.vulnerabilities
 

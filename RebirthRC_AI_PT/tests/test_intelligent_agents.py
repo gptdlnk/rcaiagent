@@ -19,57 +19,102 @@ from agents.observer_agent import ObserverAgent
 
 
 class MockRedisManager:
-    """Mock Redis Manager for testing"""
+    """Mock Redis Manager for testing with extended functionality."""
+
     def __init__(self):
         self.data = {}
+        self.lists = {}
         self.observations = []
-        self.vulnerabilities = []
         self.actions = []
+        self.errors = []
+        self.vulnerabilities = []
         self.state = 'DEEP_RECONNAISSANCE'
         self.last_error = None
-        
-        # Mock db attribute
-        self.db = Mock()
-        self.db.get = Mock(return_value=None)
-        self.db.set = Mock()
-        self.db.delete = Mock()
-        self.db.rpush = Mock()
-        self.db.lpop = Mock(return_value=None)
-        self.db.llen = Mock(return_value=0)
-        self.db.time = Mock(return_value=(int(time.time()), 0))
-    
+        # Compatibility for PayloadManager and other tools
+        self.db = self
+
+    def get(self, key):
+        return self.data.get(key)
+
+    def set(self, key, value):
+        self.data[key] = value
+
+    def delete(self, key):
+        if key in self.lists:
+            del self.lists[key]
+        if key in self.data:
+            del self.data[key]
+
+    def rpush(self, key, *values):
+        if key not in self.lists:
+            self.lists[key] = []
+        self.lists[key].extend(values)
+
+    def lpush(self, key, *values):
+        if key not in self.lists:
+            self.lists[key] = []
+        for value in reversed(values):
+            self.lists[key].insert(0, value)
+
+    def lpop(self, key):
+        if key in self.lists and self.lists[key]:
+            return self.lists[key].pop(0)
+        return None
+
+    def lindex(self, key, index):
+        if key in self.lists and -len(self.lists[key]) <= index < len(self.lists[key]):
+            return self.lists[key][index]
+        return None
+
+    def llen(self, key):
+        return len(self.lists.get(key, []))
+
+    def ltrim(self, key, start, end):
+        if key in self.lists:
+            self.lists[key] = self.lists[key][start:end+1]
+
+    def type(self, key):
+        if key in self.lists:
+            return b'list'
+        if key in self.data:
+            return b'string'
+        return b'none'
+
+    def time(self):
+        return (int(time.time()), 0)
+
     def get_state(self):
         return self.state
-    
+
     def set_state(self, state):
         self.state = state
-    
+
     def log_observation(self, agent_name, message):
         self.observations.append({'agent': agent_name, 'message': message, 'time': time.time()})
-    
+
     def get_latest_observations(self, count=10):
         return self.observations[-count:]
-    
+
     def get_vulnerabilities(self):
         return self.vulnerabilities
-    
+
     def add_vulnerability(self, vuln):
         self.vulnerabilities.append(vuln)
-    
+
     def push_action(self, action):
         self.actions.append(action)
-    
+
     def pop_action(self):
         if self.actions:
             return self.actions.pop(0)
         return None
-    
+
     def get_last_error(self):
         return self.last_error
-    
+
     def set_error(self, agent_name, error_message):
         self.last_error = {'agent': agent_name, 'message': error_message, 'time': time.time()}
-    
+
     def clear_error(self):
         self.last_error = None
 

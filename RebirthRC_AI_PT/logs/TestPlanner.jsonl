@@ -167,3 +167,679 @@
 {"timestamp": "2025-11-19T08:14:51.330595", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
 {"timestamp": "2025-11-19T08:14:51.330595", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
 {"timestamp": "2025-11-19T08:14:51.330595", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.706772", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.708277", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.708277", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.708778", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.708778", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.709781", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.709781", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.709781", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.710283", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.710283", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.710283", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.710784", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.710784", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.710784", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.712289", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.712289", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.712289", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.712289", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.725300", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.725300", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.725300", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.725300", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.725300", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.727800", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.727800", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.727800", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.727800", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.727800", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.727800", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847175", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847677", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847677", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847677", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847677", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847677", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847677", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.847677", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848230", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.848731", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849232", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.849734", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:43:24.850235", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.006406", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.007924", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.007924", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.008425", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.008425", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010123", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010123", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010123", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010123", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010123", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010123", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010625", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010625", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.010625", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.012131", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.012131", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.012131", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.012131", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.020197", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.020197", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.020197", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.020197", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.020197", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.022713", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.022713", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.022713", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.022713", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.022713", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.022713", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171216", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.171715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.172715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.173715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.174715", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.175215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.175215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.175215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.175215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.175215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.175215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:56:11.175215", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.036505", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.037509", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.037509", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.038013", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.038013", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.039016", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.040665", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.040665", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.040665", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.040665", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.046170", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.046170", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.046170", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.046170", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.046170", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.048670", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.048670", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.048670", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.048670", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.048670", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.048670", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094387", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.094889", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095390", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.095892", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.096722", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097221", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097854", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097854", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097854", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097854", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097854", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097854", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:13:54.097854", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.444954", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.445957", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.445957", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.446459", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.446459", "agent": "TestPlanner", "level": "INFO", "message": "Situation analysis complete", "details": {"total_observations": 3, "total_vulnerabilities": 2, "has_error": false, "threat_level": "low", "opportunity_score": 0.5, "recommended_actions": ["exploit_vulnerabilities"], "recent_success_rate": 0.6666666666666666, "recent_failure_rate": 0.3333333333333333, "verified_vulnerabilities": 1}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "WARNING", "message": "Switching to stealth mode due to high threat level", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.447535", "agent": "TestPlanner", "level": "INFO", "message": "Switching to aggressive exploitation mode", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.449572", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.449572", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.449572", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.449572", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.456241", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.456241", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.456241", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.456241", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.456241", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.457746", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.457746", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.457746", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.457746", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.457746", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.457746", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "PlannerAgent initialized with strategic intelligence", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.479724", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480225", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.480801", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481303", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.481806", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482308", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to targeted_exploitation", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482809", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482809", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482809", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482809", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482809", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482809", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T09:19:49.482809", "agent": "TestPlanner", "level": "INFO", "message": "Diversifying strategy to stealth_reconnaissance", "details": {}, "tags": []}

@@ -1,22 +1,28 @@
 from agents.base_agent import BaseAgent
-from tools.observability import StructuredLogger, MetricsCollector
+from tools.observability import StructuredLogger, MetricsCollector, PerformanceMonitor
+from tools.payload_manager import PayloadManager
 import time
 import json
 import random
 
+
 class PlannerAgent(BaseAgent):
     def __init__(self, redis_manager, config):
         super().__init__(redis_manager, config)
-        
+
         # Initialize observability
         self.logger = StructuredLogger(self.name, redis_manager=redis_manager)
         self.metrics = MetricsCollector(redis_manager)
-        
+        self.monitor = PerformanceMonitor(self.metrics)
+
+        # Initialize payload intelligence
+        self.payload_manager = PayloadManager(redis_manager)
+
         # Intelligence: Strategic planning memory
         self.planning_history = []
         self.strategy_effectiveness = {}
         self.current_strategy = 'reconnaissance'
-        
+
         self.logger.info("PlannerAgent initialized with strategic intelligence")
     
     def run(self):
@@ -42,6 +48,8 @@ class PlannerAgent(BaseAgent):
                     # Adapt strategy based on analysis
                     self._adapt_strategy(situation_analysis)
 
+                    payload_suggestions = self._get_payload_suggestions()
+
                     request = {
                         "request_type": "plan_action",
                         "state": current_state,
@@ -51,34 +59,39 @@ class PlannerAgent(BaseAgent):
                         "game_server_ip": self.redis_manager.db.get('GAME:SERVER_IP') or '',
                         "game_server_port": int(self.redis_manager.db.get('GAME:SERVER_PORT') or 7777),
                         "situation_analysis": situation_analysis,
-                        "current_strategy": self.current_strategy
+                        "current_strategy": self.current_strategy,
+                        "payload_suggestions": payload_suggestions
                     }
 
-                    plan_json_str = self.call_ai_model(request)
+                    with self.monitor.measure('planner_cycle', tags={'strategy': self.current_strategy}):
+                        plan_json_str = self.call_ai_model(request)
 
                     try:
                         plan_action = json.loads(plan_json_str)
                         self.redis_manager.push_action(plan_action)
-                        self.log(
-                            f"New action planned for {plan_action.get('target_agent')}: "
-                            f"{plan_action.get('action_type')}"
+                        self.logger.log_action(
+                            'PLAN_ACTION',
+                            target=plan_action.get('target_agent'),
+                            result='queued',
+                            strategy=self.current_strategy
                         )
                         self.redis_manager.set_state('PLANNING')
                     except json.JSONDecodeError:
-                        self.log(f"Error decoding plan JSON: {plan_json_str}. Retrying plan.")
+                        self.logger.error(f"Error decoding plan JSON: {plan_json_str}")
                         self.redis_manager.set_state('ERROR_HANDLING')
                         
                 elif current_state == 'PLANNING':
                     # Wait for Executor to finish the action
-                    self.log("Waiting for Executor to complete the planned action...")
+                    self.logger.info("Waiting for Executor to complete the planned action...")
                     time.sleep(5)
                     
                 else:
-                    self.log(f"System in state {current_state}. Waiting...")
+                    self.logger.debug(f"System in state {current_state}. Waiting...")
                     time.sleep(5)
 
             except Exception as e:
                 self.set_error(f"Unhandled exception in Planner: {e}")
+                self.logger.error(f"Planner exception: {e}")
                 time.sleep(10)
 
     def handle_error_state(self):
@@ -224,6 +237,25 @@ class PlannerAgent(BaseAgent):
         if len(self.planning_history) > 100:
             self.planning_history = self.planning_history[-100:]
     
+    def _get_payload_suggestions(self, count: int = 3) -> dict:
+        """
+        Retrieve intelligent payload suggestions from the payload manager.
+        Provides Planner with ready-to-use payloads for rapid execution planning.
+        """
+        suggestions = {}
+        payload_types = ['sqli', 'xss', 'rce', 'fuzzing']
+
+        for payload_type in payload_types:
+            payload_batch = self.payload_manager.get_batch_payloads(payload_type, count=count)
+            if payload_batch:
+                suggestions[payload_type] = payload_batch
+
+        self.logger.debug(
+            "Payload suggestions fetched",
+            details={ptype: len(pvals) for ptype, pvals in suggestions.items()}
+        )
+        return suggestions
+
     def _evaluate_plan_effectiveness(self, plan_action: dict, execution_result: dict):
         """
         Evaluate how effective our planning was
