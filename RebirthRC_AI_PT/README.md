@@ -240,6 +240,7 @@ RebirthRC_AI_PT/
 
 - `docs/offensive_research.md` – Dossier รวมเทคนิค Game Hacking & Security Testing เชิงรุก
 - `docs/offensive_mas_scalability.md` – Playbook การขยาย Multi-Agent System ฝั่งผู้โจมตี (task auction, semantic retrieval, decentralized load balancing)
+- `docs/offensive_observability.md` – Telemetry/Observability สำหรับฝั่งโจมตี (distributed tracing, logging, evaluation, OPSEC)
 
 ## ⚔️ Offensive Playbook (Flow ละเอียด)
 
