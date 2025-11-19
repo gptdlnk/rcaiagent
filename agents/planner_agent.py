@@ -13,15 +13,18 @@ class PlannerAgent(BaseAgent):
                     continue
 
                 if current_state == 'DEEP_RECONNAISSANCE' or current_state == 'ANALYSIS':
-                    # 1. Get latest observations from Redis
+                    # 1. Get latest observations and learning data from Redis
                     observations = self.redis_manager.get_latest_observations(count=50)
+                    learning_data = self.redis_manager.get_learning_data()
                     
                     # 2. Construct the prompt for GPT
                     prompt = (
                         f"Current System State: {current_state}\n"
                         f"Latest Observations (from Observer/RE): {observations}\n"
-                        f"Known Vulnerabilities: {self.redis_manager.get_vulnerabilities()}\n\n"
+                        f"Known Vulnerabilities: {self.redis_manager.get_vulnerabilities()}\n"
+                        f"Learning Data (Failed Attempts/Errors): {learning_data}\n\n"
                         "Based on the above, what is the single most critical next step to find a Logic Flaw in Rebirth RC? "
+                        "If Learning Data is present, your primary task is to analyze it and formulate a new, improved strategy to overcome the previous failure. "
                         "The plan must be a single, concise action command for the Executor or Fuzzer. "
                         "Format the output as a JSON object with 'target_agent', 'action_type', and 'payload'."
                     )
@@ -29,6 +32,10 @@ class PlannerAgent(BaseAgent):
                     # 3. Call GPT (The Planner)
                     plan_json_str = self.call_ai_model(prompt)
                     
+                    # 3. Clear learning data after processing (to prevent re-analysis in the next cycle)
+                    if learning_data:
+                        self.redis_manager.clear_learning_data()
+                        
                     # 4. Parse and push the action
                     try:
                         # In a real system, robust JSON parsing and validation is needed

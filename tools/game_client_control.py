@@ -1,6 +1,8 @@
 import subprocess
 import time
 import pyautogui
+import base64
+from io import BytesIO
 import psutil
 from config import GAME_CONFIG
 
@@ -68,6 +70,15 @@ class GameClientControl:
             pyautogui.screenshot(path)
             print(f"Screenshot saved to {path}")
             return True
+
+        elif action_type == 'get_screenshot_base64':
+            # Captures screenshot and returns it as a base64 string for AI Vision
+            screenshot = pyautogui.screenshot()
+            buffered = BytesIO()
+            screenshot.save(buffered, format="PNG")
+            img_str = base64.b64encode(buffered.getvalue()).decode()
+            print("Captured screenshot as base64 string.")
+            return img_str
             
         return False
 

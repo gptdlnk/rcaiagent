@@ -75,6 +75,23 @@ class RedisManager:
         # Keep log size manageable (e.g., last 1000 entries)
         self.db.ltrim('LOG:OBSERVATION', 0, 999)
 
+    # --- Self-Improvement / Learning ---
+    def log_learning_data(self, data_type: str, data: Dict[str, Any]):
+        """Logs data for the Planner to use for self-improvement (e.g., failed attack attempts)."""
+        timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        entry = {"timestamp": timestamp, "type": data_type, "data": data}
+        self.db.lpush('LEARNING:DATA', json.dumps(entry))
+        self.db.ltrim('LEARNING:DATA', 0, 99) # Keep the last 100 learning entries
+
+    def get_learning_data(self) -> List[Dict[str, Any]]:
+        """Retrieves all learning data for the Planner."""
+        raw_data = self.db.lrange('LEARNING:DATA', 0, -1)
+        return [json.loads(item) for item in raw_data]
+
+    def clear_learning_data(self):
+        """Clears the learning data after the Planner has processed them."""
+        self.db.delete('LEARNING:DATA')
+
     def get_latest_observations(self, count: int = 10) -> List[str]:
         """Retrieve the latest observations."""
         return self.db.lrange('LOG:OBSERVATION', 0, count - 1)
@@ -97,6 +114,9 @@ class RedisManager:
         full_error = f"[{timestamp}] [{agent_name}] {error_message}"
         self.db.set('ERROR:LAST_MESSAGE', full_error)
         self.set_state('ERROR_HANDLING')
+        
+        # Log the error for the Planner's learning process
+        self.log_learning_data("CRITICAL_ERROR", {"agent": agent_name, "message": error_message})
 
     def clear_error(self):
         """Clear the last error message."""

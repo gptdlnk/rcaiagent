@@ -27,6 +27,21 @@ RebirthRC_AI_PT/
 └── requirements.txt          # รายการ Dependencies
 ```
 
+### 1.1. Central Data Hub (Blackboard)
+
+Redis จะทำหน้าที่เป็น "กระดานดำ" กลางสำหรับให้ Agent ทุกตัวสื่อสารและแบ่งปันข้อมูลกัน โดยใช้โครงสร้าง Key-Value ดังนี้:
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| **SYS:STATUS** | String | สถานะปัจจุบันของระบบ (เช่น `DEEP_RECONNAISSANCE`, `ATTACKING`, `ERROR_HANDLING`) |
+| **SYS:CURRENT_PLAN** | String | แผนการปัจจุบันที่ Planner (GPT) สร้างขึ้น |
+| **OBSERVER:NETWORK_TRAFFIC** | List (JSON Array) | สรุปข้อมูล Network Traffic ล่าสุดจาก Observer (5 Hihg) |
+| **OBSERVER:SCREENSHOT_BASE64** | String | ภาพหน้าจอล่าสุด (Base64) จาก Observer (5 Hihg) |
+| **REVERSE:PROTOCOL_STRUCTURE**| String (JSON) | โครงสร้างโปรโตคอลที่ Reverse Engineer (Codex) วิเคราะห์ได้ |
+| **KB:VULNERABILITIES** | String (JSON Array) | ฐานข้อมูลช่องโหว่ที่ได้รับการยืนยันแล้ว |
+| **LEARNING:DATA** | List (JSON Array) | **ข้อมูลการเรียนรู้ (Failed Attacks, Critical Errors)** สำหรับ Planner (GPT) ใช้ในการปรับปรุงกลยุทธ์ |
+| **ERROR:LAST_MESSAGE** | String | ข้อความ Error ล่าสุดที่เกิดขึ้นในระบบ |
+
 ## 2. การจัดสรร AI Model (Team Allocation)
 
 เราใช้โมเดล AI ที่คุณมี (GPT, Codex, 5 Hihg) มาจัดสรรตามความสามารถเฉพาะทาง:
@@ -36,7 +51,7 @@ RebirthRC_AI_PT/
 | **Planner** | Strategic Brain | **GPT** | การให้เหตุผลเชิงกลยุทธ์, การวางแผนระยะยาว, การจัดการ Error |
 | **Executor** | Action Runner | **Codex** | แปลงแผนเป็นโค้ดที่รันได้, ความแม่นยำในการสร้าง Script |
 | **Reverse Engineer** | Code Analyst | **Codex** | วิเคราะห์โค้ดที่ซับซ้อน, ถอดรหัสโปรโตคอล |
-| **Observer** | Real-time Monitor | **5 Hihg** | ความเร็วในการประมวลผลข้อมูลดิบ (Packet/Log) จำนวนมาก |
+| **Observer** | Real-time Monitor | **5 Hihg** | ความเร็วในการประมวลผลข้อมูลดิบ (Packet/Log) จำนวนมาก, **รองรับ Multimodal (Vision)** |
 | **Fuzzer** | Payload Generator | **5 Hihg** | ความเร็วในการสร้างและส่ง Payload ที่ผิดปกติอย่างต่อเนื่อง |
 
 ## 3. ขั้นตอนการสร้างและการรัน (Build and Run)
@@ -55,6 +70,22 @@ RebirthRC_AI_PT/
     *   อัปเดตชื่อโมเดลใน `AGENTS` ให้ตรงกับชื่อโมเดลจริงที่คุณใช้ (เช่น แทนที่ `GPT_MODEL_NAME` ด้วย `gpt-4-turbo`)
 
 ### 3.2. ขั้นตอนการรัน (Execution Flow)
+
+#### **การเพิ่ม Visual Analysis (AI Vision)**
+
+Observer Agent (5 Hihg) ได้รับการอัปเกรดให้สามารถดึงภาพหน้าจอเกม (Base64) ผ่าน `GameClientControl` Tool และส่งภาพนั้นพร้อมกับข้อมูล Network Traffic ให้กับ 5 Hihg Model เพื่อทำการวิเคราะห์แบบ Multimodal (ภาพ + ข้อมูล) สิ่งนี้ช่วยให้:
+*   **การยืนยันผลลัพธ์:** สามารถยืนยันการโจมตีที่สำเร็จได้ด้วยภาพ (เช่น เห็นตัวเลขเงินในเกมเพิ่มขึ้นจริง)
+*   **การนำทาง:** ช่วยให้ AI สามารถระบุตำแหน่งของ UI Element ที่สำคัญได้
+
+#### **การเพิ่ม Self-Improvement (AI Resilience)**
+
+Planner Agent (GPT) ได้รับการอัปเกรดให้ตรวจสอบ **LEARNING:DATA** ใน Redis ก่อนการวางแผนทุกครั้ง หากมีข้อมูลความล้มเหลว (Failed Attacks หรือ Critical Errors) GPT จะใช้ข้อมูลนั้นเพื่อ:
+1.  **วิเคราะห์สาเหตุ:** ทำความเข้าใจว่าทำไมการโจมตีครั้งก่อนถึงล้มเหลว
+2.  **ปรับปรุงกลยุทธ์:** สร้างแผนการโจมตีใหม่ที่หลีกเลี่ยงข้อผิดพลาดเดิม
+
+กลไกนี้ทำให้ระบบมีความยืดหยุ่นสูง (AI Resilience) และสามารถทำงาน 24/7 ได้โดยไม่ "ท้อ"
+
+#### **วงจรการทำงาน (Direct Attack Flow)**
 
 1.  **รัน Game Client:** คุณต้องรันเกมและเข้าสู่ระบบด้วยตัวเอง (ตามที่คุณแจ้งว่าทำได้แล้ว)
 2.  **รัน Orchestrator:**
