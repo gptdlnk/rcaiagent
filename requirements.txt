@@ -1,0 +1,9 @@
+# Python dependencies
+redis
+openai
+scapy
+psutil
+Pillow
+pyautogui
+python-dotenv
+# Note: Some dependencies like pyautogui/Pillow might require system libraries (e.g., X server) to be installed.
