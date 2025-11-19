@@ -34,7 +34,19 @@ GAME_CONFIG = {
     "GAME_SERVER_PORT": int(os.getenv("GAME_SERVER_PORT", "7777"))  # Port ของเกมเซิร์ฟเวอร์
 }
 
-# 3. โหมดการทำงานของระบบ AI (MCP vs External API)
+# 3. Payload Configuration
+_PAYLOAD_DIR = os.path.join(_CONFIG_DIR, "payloads")
+PAYLOAD_CONFIG = {
+    "BASE_PATH": _PAYLOAD_DIR,
+    "SQLI_FILE": os.getenv("PAYLOAD_SQLI_FILE", os.path.join(_PAYLOAD_DIR, "sqli.txt")),
+    "XSS_FILE": os.getenv("PAYLOAD_XSS_FILE", os.path.join(_PAYLOAD_DIR, "xss.txt")),
+    "RCE_FILE": os.getenv("PAYLOAD_RCE_FILE", os.path.join(_PAYLOAD_DIR, "rce.txt")),
+    "FUZZ_FILE": os.getenv("PAYLOAD_FUZZ_FILE", os.path.join(_PAYLOAD_DIR, "fuzz.txt")),
+    "STEGO_IMAGES_DIR": os.getenv("PAYLOAD_STEGO_IMAGES_DIR", os.path.join(_PAYLOAD_DIR, "stego_images")),
+    "STEGO_LOADERS_DIR": os.getenv("PAYLOAD_STEGO_LOADERS_DIR", os.path.join(_PAYLOAD_DIR, "stego_loaders")),
+}
+
+# 4. โหมดการทำงานของระบบ AI (MCP vs External API)
 USE_MCP = os.getenv("USE_MCP", "true").lower() == "true"
 
 # 4. โปรไฟล์บทบาทสำหรับ MCP

