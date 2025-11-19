@@ -243,6 +243,7 @@ RebirthRC_AI_PT/
 - `docs/offensive_observability.md` – Telemetry/Observability สำหรับฝั่งโจมตี (distributed tracing, logging, evaluation, OPSEC)
 - `docs/offensive_testing.md` – Offensive Testing Pyramid & E2E evaluation (unit/integration/E2E สำหรับภารกิจโจมตี)
 - `docs/offensive_resilience.md` – การจัดการข้อผิดพลาด/ความยืดหยุ่นแบบ attacker (fallback, circuit breaker, chaos drills)
+- `docs/offensive_frameworks.md` – การเลือก framework (LangGraph / AutoGen / CrewAI) ให้สอดคล้องกับภารกิจโจมตี
 
 ## ⚔️ Offensive Playbook (Flow ละเอียด)
 
