@@ -1,4 +1,5 @@
 # Python dependencies for Rebirth RC AI Offensive Security Tool
+
 # Core dependencies
 redis>=5.0.0
 openai>=1.12.0
@@ -14,6 +15,14 @@ Pillow>=10.0.0
 
 # Additional utilities
 requests>=2.31.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
+
+# Observability
+structlog>=23.1.0
 
 # Note: 
 # - Scapy requires root/admin privileges for packet sniffing on some systems
