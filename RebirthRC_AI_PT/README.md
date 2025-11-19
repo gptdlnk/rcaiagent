@@ -244,6 +244,7 @@ RebirthRC_AI_PT/
 - `docs/offensive_testing.md` – Offensive Testing Pyramid & E2E evaluation (unit/integration/E2E สำหรับภารกิจโจมตี)
 - `docs/offensive_resilience.md` – การจัดการข้อผิดพลาด/ความยืดหยุ่นแบบ attacker (fallback, circuit breaker, chaos drills)
 - `docs/offensive_frameworks.md` – การเลือก framework (LangGraph / AutoGen / CrewAI) ให้สอดคล้องกับภารกิจโจมตี
+- `docs/offensive_redis.md` – แนวทางจูน Redis command center ของเรา (memory, commands, sharding) ในมุมผู้โจมตี
 
 ## ⚔️ Offensive Playbook (Flow ละเอียด)
 
