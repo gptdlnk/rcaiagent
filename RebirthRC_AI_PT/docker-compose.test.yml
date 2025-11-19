@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: rcai_redis_test
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_test_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - rcai_test_network
+
+  # Mock target server for testing
+  mock_target:
+    image: python:3.11-slim
+    container_name: rcai_mock_target
+    ports:
+      - "7777:7777"
+      - "8080:8080"
+    command: >
+      sh -c "pip install flask && python -c '
+      from flask import Flask, request
+      app = Flask(__name__)
+      
+      @app.route(\"/\")
+      def index():
+          return \"Mock Target Server\"
+      
+      @app.route(\"/api/test\", methods=[\"GET\", \"POST\"])
+      def api_test():
+          return {\"status\": \"ok\", \"data\": request.get_json()}
+      
+      @app.route(\"/vulnerable\", methods=[\"GET\", \"POST\"])
+      def vulnerable():
+          # Intentionally vulnerable endpoint for testing
+          query = request.args.get(\"q\", \"\")
+          return f\"Query: {query}\"
+      
+      app.run(host=\"0.0.0.0\", port=7777)
+      '"
+    networks:
+      - rcai_test_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7777/"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  redis_test_data:
+    driver: local
+
+networks:
+  rcai_test_network:
+    driver: bridge

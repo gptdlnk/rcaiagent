@@ -2,9 +2,17 @@ import subprocess
 import time
 import os
 import platform
-import pyautogui
-import psutil
 from config import GAME_CONFIG, SCREENSHOT_DIR
+
+try:
+    import pyautogui
+except ImportError:
+    pyautogui = None  # Optional dependency
+
+try:
+    import psutil
+except ImportError:
+    psutil = None  # Optional dependency
 
 class GameClientControl:
     """
@@ -73,6 +81,10 @@ class GameClientControl:
     @staticmethod
     def is_game_running(process_name: str = None) -> bool:
         """Checks if the game process is currently running."""
+        if psutil is None:
+            print("Warning: psutil not available, cannot check game process")
+            return False
+            
         if process_name is None:
             process_name = GAME_CONFIG.get('GAME_PROCESS_NAME', 'RebirthRC.exe')
         
@@ -91,6 +103,10 @@ class GameClientControl:
     @staticmethod
     def close_game(process_name: str = None) -> bool:
         """Terminates the game process."""
+        if psutil is None:
+            print("Warning: psutil not available, cannot close game process")
+            return False
+            
         if process_name is None:
             process_name = GAME_CONFIG.get('GAME_PROCESS_NAME', 'RebirthRC.exe')
         
@@ -125,6 +141,10 @@ class GameClientControl:
         """
         if not GameClientControl.is_game_running():
             print("Game is not running. Cannot perform action.")
+            return False
+        
+        if pyautogui is None:
+            print("Warning: pyautogui not available, cannot perform GUI actions")
             return False
 
         try:

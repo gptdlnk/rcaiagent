@@ -1,0 +1,6 @@
+{"timestamp": "2025-11-19T08:04:26.842615", "agent": "TestAgent", "level": "INFO", "message": "System started", "details": {}, "tags": []}
+{"timestamp": "2025-11-19T08:04:26.842824", "agent": "TestAgent", "level": "DEBUG", "message": "Debug information", "details": {"key": "value"}, "tags": []}
+{"timestamp": "2025-11-19T08:04:26.842879", "agent": "TestAgent", "level": "WARNING", "message": "Warning message", "details": {}, "tags": ["test"]}
+{"timestamp": "2025-11-19T08:04:26.842937", "agent": "TestAgent", "level": "INFO", "message": "Action: SCAN", "details": {"action_type": "SCAN", "target": "192.168.1.1", "result": "success", "duration": 1.5}, "tags": ["action"]}
+{"timestamp": "2025-11-19T08:04:26.842997", "agent": "TestAgent", "level": "INFO", "message": "Attack: SQLi -> login_form", "details": {"attack_type": "SQLi", "target": "login_form", "payload": "' OR 1=1--", "success": true, "response": null}, "tags": ["attack", "SQLi"]}
+{"timestamp": "2025-11-19T08:04:26.843062", "agent": "TestAgent", "level": "CRITICAL", "message": "Vulnerability Found: SQL Injection", "details": {"vuln_type": "SQL Injection", "severity": "high", "description": "Login bypass vulnerability", "proof": null}, "tags": ["vulnerability", "high"]}

@@ -1,6 +1,6 @@
 import json
 import random
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional, Union
 
 
 class RoleEngine:
@@ -10,9 +10,9 @@ class RoleEngine:
     แต่วิเคราะห์สถานการณ์และเลือก strategy ที่เหมาะสมที่สุด
     """
 
-    _instance: "RoleEngine" | None = None
+    _instance: Optional["RoleEngine"] = None
 
-    def __init__(self, role_profiles: Dict[str, Dict[str, Any]] | None = None):
+    def __init__(self, role_profiles: Optional[Dict[str, Dict[str, Any]]] = None):
         self.role_profiles = role_profiles or {}
         # Real-time adaptive state - เก็บสถานการณ์ปัจจุบันและปรับ strategy
         self.shared_state: Dict[str, Any] = {
