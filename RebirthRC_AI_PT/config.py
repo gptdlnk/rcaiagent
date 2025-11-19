@@ -34,60 +34,96 @@ GAME_CONFIG = {
     "GAME_SERVER_PORT": int(os.getenv("GAME_SERVER_PORT", "7777"))  # Port ของเกมเซิร์ฟเวอร์
 }
 
-# 3. การตั้งค่า API Keys
+# 3. โหมดการทำงานของระบบ AI (MCP vs External API)
+USE_MCP = os.getenv("USE_MCP", "true").lower() == "true"
+
+# 4. โปรไฟล์บทบาทสำหรับ MCP
+ROLE_PROFILES = {
+    "PLANNER": {
+        "objectives": [
+            "กำหนดขั้นตอนถัดไปสู่ช่องโหว่ logic flaw",
+            "รักษาความต่อเนื่องของ flow และจัดการ error"
+        ],
+        "fallback_actions": ["CAPTURE_TRAFFIC", "ANALYSE"]
+    },
+    "OBSERVER": {
+        "objectives": [
+            "ตรวจจับความผิดปกติใน packet",
+            "แจ้งเตือน planner เมื่อพบ anomaly"
+        ]
+    },
+    "REVERSE": {
+        "objectives": [
+            "วิเคราะห์ binary/packet handler",
+            "จัดทำ protocol structure"
+        ]
+    },
+    "FUZZER": {
+        "objectives": [
+            "สร้าง payload ผิดปกติ",
+            "กระตุ้น logic flaw / buffer overflow"
+        ]
+    }
+}
+
+# 5. การตั้งค่า (Legacy) API Keys - เผื่อสลับกลับไปใช้ภายนอกภายหลัง
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 HIHG_API_KEY = os.getenv("HIHG_API_KEY", "")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")  # สำหรับ custom endpoints
 HIHG_BASE_URL = os.getenv("HIHG_BASE_URL", "")  # สำหรับ 5 Hihg API endpoint
 
-# 4. การตั้งค่า AI Agent (Attacker) และการจัดสรรโมเดล
-# โมเดลที่คุณมี: GPT, Codex, 5 Hihg
-# การจัดสรร: GPT (Planner), Codex (Executor/RE), 5 Hihg (Observer/Fuzzer)
+# 6. การตั้งค่า AI Agent (Attacker) และการจัดสรรโมเดล
+# หาก USE_MCP = True ระบบจะใช้ RoleEngine แทน API ภายนอก
 
 AGENTS = {
     "PLANNER": {
-        "NAME": "AI Planner (GPT)",
-        "MODEL": os.getenv("PLANNER_MODEL", "gpt-4-turbo-preview"),  # Default model name
-        "TEMPERATURE": float(os.getenv("PLANNER_TEMPERATURE", "0.7")),
-        "SYSTEM_PROMPT": "You are the strategic brain. Analyze observations and create the next step plan in natural language. Always format your response as a JSON object with 'target_agent', 'action_type', and 'payload' fields.",
+        "NAME": "AI Planner",
+        "MODEL": os.getenv("PLANNER_MODEL", "mcp-planner"),
+        "TEMPERATURE": float(os.getenv("PLANNER_TEMPERATURE", "0.2")),
+        "SYSTEM_PROMPT": "Planner role in MCP.",
         "API_KEY": OPENAI_API_KEY,
-        "BASE_URL": OPENAI_BASE_URL
+        "BASE_URL": OPENAI_BASE_URL,
+        "USE_MCP": USE_MCP
     },
     "EXECUTOR": {
-        "NAME": "AI Executor (Codex)",
-        "MODEL": os.getenv("EXECUTOR_MODEL", "gpt-3.5-turbo-instruct"),  # Codex-like model
+        "NAME": "AI Executor",
+        "MODEL": os.getenv("EXECUTOR_MODEL", "mcp-executor"),
         "TEMPERATURE": float(os.getenv("EXECUTOR_TEMPERATURE", "0.1")),
-        "SYSTEM_PROMPT": "You are the coder. Convert the Planner's natural language plan into executable Python code or shell commands. Your output MUST be only the code block without markdown formatting.",
+        "SYSTEM_PROMPT": "Executor role in MCP.",
         "API_KEY": OPENAI_API_KEY,
-        "BASE_URL": OPENAI_BASE_URL
+        "BASE_URL": OPENAI_BASE_URL,
+        "USE_MCP": USE_MCP
     },
     "OBSERVER": {
-        "NAME": "AI Observer (5 Hihg)",
-        "MODEL": os.getenv("OBSERVER_MODEL", "gpt-3.5-turbo"),  # Fast model for real-time processing
+        "NAME": "AI Observer",
+        "MODEL": os.getenv("OBSERVER_MODEL", "mcp-observer"),
         "TEMPERATURE": float(os.getenv("OBSERVER_TEMPERATURE", "0.0")),
-        "SYSTEM_PROMPT": "You are the real-time monitor. Analyze raw network traffic and logs, then summarize critical findings for the Planner. Be concise and focus on anomalies.",
-        "API_KEY": HIHG_API_KEY if HIHG_API_KEY else OPENAI_API_KEY,  # Fallback to OpenAI if 5 Hihg not configured
-        "BASE_URL": HIHG_BASE_URL if HIHG_BASE_URL else OPENAI_BASE_URL
+        "SYSTEM_PROMPT": "Observer role in MCP.",
+        "API_KEY": HIHG_API_KEY if HIHG_API_KEY else OPENAI_API_KEY,
+        "BASE_URL": HIHG_BASE_URL if HIHG_BASE_URL else OPENAI_BASE_URL,
+        "USE_MCP": USE_MCP
     },
     "REVERSE_ENGINEER": {
-        "NAME": "AI Reverse Engineer (Codex)",
-        "MODEL": os.getenv("REVERSE_ENGINEER_MODEL", "gpt-3.5-turbo-instruct"),
+        "NAME": "AI Reverse Engineer",
+        "MODEL": os.getenv("REVERSE_ENGINEER_MODEL", "mcp-reverse"),
         "TEMPERATURE": float(os.getenv("REVERSE_ENGINEER_TEMPERATURE", "0.3")),
-        "SYSTEM_PROMPT": "You are the code analyst. Analyze game binaries and decompile code to extract game logic and protocol structures. Output structured analysis results.",
+        "SYSTEM_PROMPT": "Reverse engineer role in MCP.",
         "API_KEY": OPENAI_API_KEY,
-        "BASE_URL": OPENAI_BASE_URL
+        "BASE_URL": OPENAI_BASE_URL,
+        "USE_MCP": USE_MCP
     },
     "FUZZER": {
-        "NAME": "AI Fuzzer (5 Hihg)",
-        "MODEL": os.getenv("FUZZER_MODEL", "gpt-3.5-turbo"),  # Fast model for payload generation
-        "TEMPERATURE": float(os.getenv("FUZZER_TEMPERATURE", "0.9")),  # High temperature for creative, random payloads
-        "SYSTEM_PROMPT": "You are the payload generator. Create large volumes of abnormal and creative data packets based on known protocol structures. Output ONLY a JSON object with 'payload_hex', 'target_ip', and 'target_port' fields.",
-        "API_KEY": HIHG_API_KEY if HIHG_API_KEY else OPENAI_API_KEY,  # Fallback to OpenAI if 5 Hihg not configured
-        "BASE_URL": HIHG_BASE_URL if HIHG_BASE_URL else OPENAI_BASE_URL
+        "NAME": "AI Fuzzer",
+        "MODEL": os.getenv("FUZZER_MODEL", "mcp-fuzzer"),
+        "TEMPERATURE": float(os.getenv("FUZZER_TEMPERATURE", "0.9")),
+        "SYSTEM_PROMPT": "Fuzzer role in MCP.",
+        "API_KEY": HIHG_API_KEY if HIHG_API_KEY else OPENAI_API_KEY,
+        "BASE_URL": HIHG_BASE_URL if HIHG_BASE_URL else OPENAI_BASE_URL,
+        "USE_MCP": USE_MCP
     }
 }
 
-# 5. การตั้งค่าทั่วไป
+# 7. การตั้งค่าทั่วไป
 LOG_DIR = os.getenv("LOG_DIR", "logs")
 SCREENSHOT_DIR = os.path.join(LOG_DIR, "screenshots")
 MAX_LOG_ENTRIES = int(os.getenv("MAX_LOG_ENTRIES", "1000"))

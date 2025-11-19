@@ -2,8 +2,18 @@ import time
 import threading
 import os
 import sys
-from config import AGENTS, REDIS_CONFIG, LOG_DIR, SCREENSHOT_DIR, OPENAI_API_KEY, HIHG_API_KEY
+from config import (
+    AGENTS,
+    REDIS_CONFIG,
+    LOG_DIR,
+    SCREENSHOT_DIR,
+    USE_MCP,
+    ROLE_PROFILES,
+    OPENAI_API_KEY,
+    HIHG_API_KEY
+)
 from data_hub.redis_manager import RedisManager
+from mcp import RoleEngine
 from agents.planner_agent import PlannerAgent
 from agents.executor_agent import ExecutorAgent
 from agents.observer_agent import ObserverAgent
@@ -20,7 +30,7 @@ def check_prerequisites():
     warnings = []
     
     # Check Redis connection
-    print("\n[1/4] Checking Redis connection...")
+    print("\n[1/3] Checking Redis connection...")
     try:
         test_redis = RedisManager(REDIS_CONFIG)
         test_redis.get_state()
@@ -31,22 +41,8 @@ def check_prerequisites():
         print("  Please ensure Redis is running on {}:{}".format(
             REDIS_CONFIG['HOST'], REDIS_CONFIG['PORT']))
     
-    # Check API keys
-    print("\n[2/4] Checking API keys...")
-    if not OPENAI_API_KEY:
-        warnings.append("OPENAI_API_KEY not set. Some agents may not work.")
-        print("⚠ OPENAI_API_KEY not set")
-    else:
-        print("✓ OPENAI_API_KEY configured")
-    
-    if not HIHG_API_KEY:
-        warnings.append("HIHG_API_KEY not set. Observer and Fuzzer will use OpenAI fallback.")
-        print("⚠ HIHG_API_KEY not set (will use OpenAI fallback)")
-    else:
-        print("✓ HIHG_API_KEY configured")
-    
     # Check directories
-    print("\n[3/4] Checking directory structure...")
+    print("\n[2/3] Checking directory structure...")
     try:
         os.makedirs(LOG_DIR, exist_ok=True)
         os.makedirs(SCREENSHOT_DIR, exist_ok=True)
@@ -57,15 +53,11 @@ def check_prerequisites():
         print(f"✗ Failed to create directories: {e}")
     
     # Check agent configurations
-    print("\n[4/4] Checking agent configurations...")
+    print("\n[3/3] Checking agent configurations...")
     for agent_name, agent_config in AGENTS.items():
         model = agent_config.get('MODEL', 'NOT_SET')
-        api_key = agent_config.get('API_KEY', '')
-        if not api_key:
-            warnings.append(f"{agent_name} has no API key configured")
-            print(f"⚠ {agent_name}: No API key (model: {model})")
-        else:
-            print(f"✓ {agent_name}: {model}")
+        mode = 'MCP' if agent_config.get('USE_MCP') else 'External Model'
+        print(f"✓ {agent_name}: {model} (mode: {mode})")
     
     # Summary
     print("\n" + "=" * 60)

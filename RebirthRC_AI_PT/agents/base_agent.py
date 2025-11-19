@@ -3,7 +3,15 @@ import threading
 import json
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional
-from openai import OpenAI # ใช้ OpenAI client สำหรับ GPT/Codex
+
+from config import USE_MCP
+from mcp import RoleEngine
+
+try:
+    from openai import OpenAI  # Optional: only used when USE_MCP is False
+except ImportError:  # pragma: no cover - optional dependency
+    OpenAI = None
+
 
 class BaseAgent(ABC):
     """
@@ -15,27 +23,31 @@ class BaseAgent(ABC):
         self.name = config['NAME']
         self.model_name = config['MODEL']
         self.temperature = config['TEMPERATURE']
-        self.system_prompt = config['SYSTEM_PROMPT']
+        self.system_prompt = config.get('SYSTEM_PROMPT', '')
+        self.use_mcp = config.get('USE_MCP', USE_MCP)
         self._running = threading.Event()
         self._running.set()
-        
-        # Get API key and base URL from config
-        api_key = config.get('API_KEY', '')
-        base_url = config.get('BASE_URL', 'https://api.openai.com/v1')
-        
-        # Initialize OpenAI Client with API key and base URL
-        # For 5 Hihg or custom endpoints, base_url can be overridden
-        client_kwargs = {}
-        if api_key:
-            client_kwargs['api_key'] = api_key
-        if base_url and base_url != 'https://api.openai.com/v1':
-            client_kwargs['base_url'] = base_url
-        
-        try:
-            self.ai_client = OpenAI(**client_kwargs) if client_kwargs else OpenAI()
-        except Exception as e:
-            print(f"Warning: Failed to initialize AI client for {self.name}: {e}")
-            self.ai_client = None 
+
+        self.ai_client: Optional[object] = None
+
+        if not self.use_mcp:
+            if OpenAI is None:
+                print(f"Warning: OpenAI package not available; forcing MCP mode for {self.name}.")
+                self.use_mcp = True
+            else:
+                api_key = config.get('API_KEY', '')
+                base_url = config.get('BASE_URL', 'https://api.openai.com/v1')
+                client_kwargs = {}
+                if api_key:
+                    client_kwargs['api_key'] = api_key
+                if base_url and base_url != 'https://api.openai.com/v1':
+                    client_kwargs['base_url'] = base_url
+                try:
+                    self.ai_client = OpenAI(**client_kwargs) if client_kwargs else OpenAI()
+                except Exception as e:
+                    print(f"Warning: Failed to initialize AI client for {self.name}: {e}. Switching to MCP mode.")
+                    self.use_mcp = True
+
 
     def is_running(self):
         return self._running.is_set()
@@ -54,22 +66,33 @@ class BaseAgent(ABC):
         self.redis_manager.set_error(self.name, error_message)
         self.log(f"CRITICAL ERROR: {error_message}")
 
-    def call_ai_model(self, user_prompt: str, max_retries: int = 3) -> str:
-        """
-        Generic function to call the assigned AI model.
-        This is where the actual API call to GPT, Codex, or 5 Hihg happens.
-        Includes retry logic for transient failures.
-        """
+    def call_ai_model(self, request: Any, max_retries: int = 3) -> str:
+        """Route the agent request via MCP or external API depending on configuration."""
+        if self.use_mcp:
+            try:
+                engine = RoleEngine.instance()
+            except RuntimeError:
+                RoleEngine.initialize({})
+                engine = RoleEngine.instance()
+
+            try:
+                response = engine.respond(self.name, request)
+                return response if isinstance(response, str) else json.dumps(response)
+            except Exception as exc:  # pragma: no cover - defensive
+                error_msg = f"MCP processing failed for {self.name}: {exc}"
+                self.set_error(error_msg)
+                return f"ERROR: {error_msg}"
+
         if not self.ai_client:
-            error_msg = f"AI client not initialized for {self.name}. Check API keys."
+            error_msg = f"AI client not initialized for {self.name}."
             self.set_error(error_msg)
             return f"ERROR: {error_msg}"
-        
-        self.log(f"Calling AI model {self.model_name}...")
-        
+
+        user_prompt = request if isinstance(request, str) else json.dumps(request)
+        self.log(f"Calling external model {self.model_name}...")
+
         for attempt in range(max_retries):
             try:
-                # OpenAI API call structure
                 response = self.ai_client.chat.completions.create(
                     model=self.model_name,
                     messages=[
@@ -77,21 +100,26 @@ class BaseAgent(ABC):
                         {"role": "user", "content": user_prompt}
                     ],
                     temperature=self.temperature,
-                    timeout=60  # 60 second timeout
+                    timeout=60
                 )
                 result = response.choices[0].message.content.strip()
-                self.log(f"AI model {self.model_name} responded successfully.")
+                self.log(f"External model {self.model_name} responded successfully.")
                 return result
-            except Exception as e:
+            except Exception as exc:
                 if attempt < max_retries - 1:
-                    wait_time = (attempt + 1) * 2  # Exponential backoff: 2s, 4s, 6s
-                    self.log(f"AI Model API call failed (attempt {attempt + 1}/{max_retries}): {e}. Retrying in {wait_time}s...")
+                    wait_time = (attempt + 1) * 2
+                    self.log(
+                        f"External model call failed (attempt {attempt + 1}/{max_retries}): {exc}. "
+                        f"Retrying in {wait_time}s..."
+                    )
                     time.sleep(wait_time)
                 else:
-                    error_msg = f"AI Model API call failed for {self.model_name} after {max_retries} attempts: {e}"
+                    error_msg = (
+                        f"External model call failed for {self.model_name} after {max_retries} attempts: {exc}"
+                    )
                     self.set_error(error_msg)
                     return f"ERROR: {error_msg}"
-        
+
         return "ERROR: Unexpected error in call_ai_model"
 
     @abstractmethod

@@ -21,6 +21,7 @@
 
 - **Multi-Agent Architecture**: ใช้ AI Agents 5 ตัวทำงานร่วมกัน
 - **Redis Blackboard**: ใช้ Redis เป็น Central Data Hub สำหรับการสื่อสารระหว่าง Agents
+- **MCP RoleEngine (No External API)**: ระบบตัดสินใจภายในผ่าน RoleEngine โดยไม่ต้องพึ่งพาโมเดลภายนอก
 - **Automated Reconnaissance**: ดักจับและวิเคราะห์ Network Traffic อัตโนมัติ
 - **Reverse Engineering**: วิเคราะห์ Binary และ Protocol Structure
 - **Automated Fuzzing**: สร้างและส่ง Payload ที่ผิดปกติเพื่อค้นหาช่องโหว่
@@ -30,13 +31,13 @@
 
 ### AI Agents
 
-| Agent | บทบาท | โมเดลที่ใช้ | จุดเด่น |
-|-------|--------|-------------|---------|
-| **Planner** | Strategic Brain | GPT | การให้เหตุผลเชิงกลยุทธ์, การวางแผนระยะยาว |
-| **Executor** | Action Runner | Codex | แปลงแผนเป็นโค้ดที่รันได้ |
-| **Observer** | Real-time Monitor | 5 Hihg | ความเร็วในการประมวลผลข้อมูลดิบ |
-| **Reverse Engineer** | Code Analyst | Codex | วิเคราะห์โค้ดที่ซับซ้อน |
-| **Fuzzer** | Payload Generator | 5 Hihg | ความเร็วในการสร้าง Payload |
+| Agent | บทบาท | MCP Objectives | ตัวอย่างผลลัพธ์ |
+|-------|--------|----------------|------------------|
+| **Planner** | Strategic Brain | สร้าง action plan จาก observations, จัดการ error | JSON action สำหรับ Executor / Observer / Reverse / Fuzzer |
+| **Executor** | Action Runner | แปลงแผนเป็นคำสั่ง terminal/game/network | รายงานผลการรันคำสั่งกลับไปที่ Redis |
+| **Observer** | Real-time Monitor | สรุป anomaly จาก packet log และแจ้ง Planner | LOG: `NETWORK_SUMMARY` |
+| **Reverse Engineer** | Code Analyst | สร้างคำสั่งวิเคราะห์ binary และสรุป protocol | LOG: `RE_RAW_RESULT`, `RE_KNOWLEDGE` |
+| **Fuzzer** | Payload Generator | สร้าง payload ผิดปกติจากความรู้ล่าสุด | LOG: `FUZZ_RESULT` + JSON payload |
 
 ### System Flow
 

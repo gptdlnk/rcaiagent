@@ -2,6 +2,7 @@ from agents.base_agent import BaseAgent
 from tools.terminal_wrapper import TerminalWrapper
 from tools.game_client_control import GameClientControl
 from tools.network_sniffer import NetworkSniffer
+from tools.verification import get_verification
 import json
 import time
 
@@ -27,6 +28,14 @@ class ExecutorAgent(BaseAgent):
                         self.execute_game_client_command(action_type, payload)
                     elif target_agent == 'NETWORK':
                         self.execute_network_command(action_type, payload)
+                    elif target_agent == 'EXECUTOR':
+                        # Handle executor-specific actions (verification, backdoor deployment)
+                        if action_type == 'STEALTH_VERIFY':
+                            self.execute_stealth_verification(payload)
+                        elif action_type == 'DEPLOY_BACKDOOR':
+                            self.execute_backdoor_deployment(payload)
+                        else:
+                            self.log(f"Unknown executor action type: {action_type}")
                     elif target_agent == 'REVERSE_ENGINEER':
                         # Pass the action to the RE Agent (if needed, though RE usually works independently)
                         self.log("Passing action to RE Agent (Not implemented in this stub).")
@@ -82,3 +91,99 @@ class ExecutorAgent(BaseAgent):
                 self.log("Network send command payload incomplete.")
         else:
             self.log(f"Unknown network action type: {action_type}")
+    
+    def execute_stealth_verification(self, payload: dict):
+        """Execute stealth verification - ยืนยันช่องโหว่โดยไม่ให้เป้าหมายรู้ตัว"""
+        self.log("Starting stealth verification...")
+        verification = get_verification()
+        
+        vulnerability = payload.get('vulnerability', {})
+        verification_type = payload.get('verification_type', 'multi_vector')
+        stealth_mode = payload.get('stealth_mode', True)
+        
+        target_ip = vulnerability.get('target_ip', '127.0.0.1')
+        target_port = vulnerability.get('target_port', 7777)
+        vuln_type = vulnerability.get('type', 'UNKNOWN')
+        
+        if verification_type == 'multi_vector':
+            # Multi-vector verification - ใช้หลายเทคนิค
+            result = verification.multi_vector_verification(target_ip, target_port, vuln_type)
+            
+            if result['overall_success']:
+                self.log(f"✓ Stealth verification SUCCESS (Confidence: {result['confidence']:.2%})")
+                # Record verified vulnerability
+                verified_vuln = {
+                    **vulnerability,
+                    "verified": True,
+                    "verification_confidence": result['confidence'],
+                    "verification_vectors": result['vectors'],
+                    "verification_time": time.time()
+                }
+                self.redis_manager.add_vulnerability(verified_vuln)
+                self.redis_manager.log_observation(
+                    self.name,
+                    f"VERIFIED_VULNERABILITY: {vuln_type} at {target_ip}:{target_port} "
+                    f"(Confidence: {result['confidence']:.2%})"
+                )
+            else:
+                self.log(f"✗ Stealth verification FAILED (Confidence: {result['confidence']:.2%})")
+                self.redis_manager.log_observation(
+                    self.name,
+                    f"VERIFICATION_FAILED: {vuln_type} at {target_ip}:{target_port}"
+                )
+        else:
+            # Single vector verification
+            success, evidence = verification.verify_command_execution(
+                target_ip, target_port, "whoami"
+            )
+            if success:
+                self.log(f"✓ Command execution verified: {evidence}")
+            else:
+                self.log(f"✗ Command execution verification failed: {evidence}")
+    
+    def execute_backdoor_deployment(self, payload: dict):
+        """Deploy backdoor and verify 100% success"""
+        self.log("Starting backdoor deployment with 100% verification...")
+        verification = get_verification()
+        
+        target_ip = payload.get('target_ip', '127.0.0.1')
+        target_port = payload.get('target_port', 7777)
+        backdoor_type = payload.get('backdoor_type', 'persistent')
+        verify_100_percent = payload.get('verify_100_percent', True)
+        
+        success, deployment_result = verification.deploy_backdoor(
+            target_ip, target_port, backdoor_type
+        )
+        
+        if success and verify_100_percent:
+            if deployment_result.get('verified', False):
+                self.log(f"✓ Backdoor deployed and verified 100% at {target_ip}:{target_port}")
+                self.redis_manager.log_observation(
+                    self.name,
+                    f"BACKDOOR_DEPLOYED: {backdoor_type} at {target_ip}:{target_port} "
+                    f"(ID: {deployment_result.get('backdoor_id', 'N/A')})"
+                )
+                # Record backdoor in vulnerabilities
+                backdoor_vuln = {
+                    "type": "BACKDOOR_DEPLOYED",
+                    "target_ip": target_ip,
+                    "target_port": target_port,
+                    "backdoor_type": backdoor_type,
+                    "backdoor_id": deployment_result.get('backdoor_id', ''),
+                    "access_method": deployment_result.get('access_method', ''),
+                    "verified": True,
+                    "deployment_time": deployment_result.get('deployment_time', time.time())
+                }
+                self.redis_manager.add_vulnerability(backdoor_vuln)
+            else:
+                self.log(f"✗ Backdoor deployed but verification failed")
+                self.redis_manager.log_observation(
+                    self.name,
+                    f"BACKDOOR_DEPLOYMENT_FAILED: Verification incomplete at {target_ip}:{target_port}"
+                )
+        else:
+            self.log(f"✗ Backdoor deployment failed: {deployment_result.get('error', 'Unknown error')}")
+            self.redis_manager.log_observation(
+                self.name,
+                f"BACKDOOR_DEPLOYMENT_FAILED: {target_ip}:{target_port}"
+            )
