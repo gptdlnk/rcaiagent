@@ -1,6 +1,8 @@
 # MASTER BLUEPRINT: AI-Driven Advanced Offensive Tool Tool
 
-เอกสารนี้คือพิมพ์เขียวฉบับสมบูรณ์สำหรับโปรเจกต์ **Rebirth RC Offensive Security Tool** ของคุณ โดยครอบคลุมตั้งแต่โครงสร้างโค้ด, การติดตั้ง, การรัน, การทดสอบ, ไปจนถึงแนวทางการนำไปใช้ประโยชน์เชิงพาณิชย์
+เอกสารนี้คือพิมพ์เขียวฉบับสมบูรณ์สำหรับโปรเจกต์ **Rebirth RC Offensive Security Tool** ของคุณ โดยครอบคลุมตั้งแต่โครงสร้างโค้ด, การติดตั้ง, การรัน, การทดสอบ ไปจนถึงการวางแผนโจมตีและสร้าง persistence **จากมุมมองผู้โจมตี**
+
+> **Offensive Mindset:** ทุกขั้นตอนถูกออกแบบให้สอดคล้องกับการปฏิบัติการเชิงรุก – Recon → Exploit → Stealth Verification → Persistence → Command & Control
 
 ## 1. โครงสร้างโปรเจกต์ (Code Architecture)
 
@@ -28,6 +30,12 @@ RebirthRC_AI_PT/
 ├── config.py                 # การตั้งค่าระบบและโปรไฟล์ MCP
 └── requirements.txt          # รายการ Dependencies
 ```
+
+### Offensive Objectives
+
+- เก็บข้อมูลเชิงลึกของ protocol/logic layer เพื่อเตรียมโจมตีแบบ real-time adaptive
+- ใช้ MCP RoleEngine เลือก strategy ที่เหมาะสมในแต่ละสถานการณ์ (INITIAL_RECON → PROTOCOL_DISCOVERED → VULNERABILITY_DETECTED → VERIFICATION_NEEDED → BACKDOOR_DEPLOYMENT)
+- ยืนยันช่องโหว่แบบ multi-vector โดยไม่ให้เป้าหมายรู้ตัว และฝัง backdoor เพื่อควบคุมระบบระยะยาว
 
 ## 2. การจัดสรรบทบาท (Role Allocation ผ่าน MCP)
 
