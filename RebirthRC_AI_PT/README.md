@@ -110,11 +110,25 @@ HIHG_API_KEY=your-hihg-key-here  # Optional
 
 ### 2. ตั้งค่า Game Path
 
-แก้ไขไฟล์ `.env` หรือ `config.py`:
+โปรเจกต์นี้มาพร้อมกับไฟล์เกมที่จำเป็น:
+- **RebirthClient.exe**: ไฟล์เกมหลัก (อยู่ในโฟลเดอร์โปรเจกต์)
+- **RebithPatcher.lnk**: Shortcut ไปที่ `C:\RebirthRC\content\RebirthRC.exe`
+
+ระบบจะใช้ `RebirthClient.exe` เป็นค่าเริ่มต้น หากไม่พบจะลองใช้ alternative path
+
+แก้ไขไฟล์ `.env` หรือ `config.py` (ถ้าต้องการใช้ path อื่น):
 
 ```env
-GAME_PATH=C:\Program Files\RebirthRC\RebirthRC.exe
-GAME_PROCESS_NAME=RebirthRC.exe
+# ใช้ RebirthClient.exe ในโฟลเดอร์โปรเจกต์ (ค่าเริ่มต้น)
+# GAME_PATH=./RebirthClient.exe
+
+# หรือใช้ path จาก RebithPatcher.lnk
+# GAME_PATH=C:\RebirthRC\content\RebirthRC.exe
+
+# หรือใช้ path อื่น
+# GAME_PATH=C:\Program Files\RebirthRC\RebirthRC.exe
+
+GAME_PROCESS_NAME=RebirthClient.exe
 GAME_SERVER_IP=192.168.1.100  # ถ้ารู้ IP ของเกมเซิร์ฟเวอร์
 GAME_SERVER_PORT=7777
 ```

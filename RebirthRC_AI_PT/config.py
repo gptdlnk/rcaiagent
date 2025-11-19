@@ -13,10 +13,21 @@ REDIS_CONFIG = {
 }
 
 # 2. การตั้งค่าเกมและเครื่องมือ
+# Game Client Files:
+# - RebirthClient.exe: Main game client executable (located in project directory)
+# - RebithPatcher.lnk: Shortcut to game launcher (points to C:\RebirthRC\content\RebirthRC.exe)
+
+# Get the directory where this config file is located
+_CONFIG_DIR = os.path.dirname(os.path.abspath(__file__))
+
 GAME_CONFIG = {
-    "GAME_PATH": os.getenv("GAME_PATH", "C:\\Program Files\\RebirthRC\\RebirthRC.exe"),  # Windows path example
+    # Primary game executable path (check local directory first, then environment variable, then default)
+    "GAME_PATH": os.getenv("GAME_PATH", os.path.join(_CONFIG_DIR, "RebirthClient.exe")),
+    # Alternative game path from shortcut (RebithPatcher.lnk points to this)
+    "GAME_ALTERNATIVE_PATH": os.getenv("GAME_ALTERNATIVE_PATH", "C:\\RebirthRC\\content\\RebirthRC.exe"),
     "GAME_LOG_PATH": os.getenv("GAME_LOG_PATH", "C:\\Users\\%USERNAME%\\Documents\\RebirthRC\\logs\\"),  # Windows path example
-    "GAME_PROCESS_NAME": os.getenv("GAME_PROCESS_NAME", "RebirthRC.exe"),
+    "GAME_PROCESS_NAME": os.getenv("GAME_PROCESS_NAME", "RebirthClient.exe"),  # Updated to match actual executable
+    "GAME_PATCHER_LNK": os.path.join(_CONFIG_DIR, "RebithPatcher.lnk"),  # Patcher shortcut
     "NMAP_SCAN_RANGE": os.getenv("NMAP_SCAN_RANGE", "192.168.1.0/24"),
     "PROXY_SERVER": os.getenv("PROXY_SERVER", "http://127.0.0.1:8080"),  # สำหรับการดักจับ Traffic (เช่น Burp Suite/mitmproxy)
     "GAME_SERVER_IP": os.getenv("GAME_SERVER_IP", ""),  # IP ของเกมเซิร์ฟเวอร์ (ถ้ารู้)

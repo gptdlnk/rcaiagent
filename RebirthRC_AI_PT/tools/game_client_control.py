@@ -25,15 +25,26 @@ class GameClientControl:
     
     @staticmethod
     def launch_game() -> bool:
-        """Launches the game executable."""
+        """Launches the game executable. Tries primary path first, then alternative path."""
         game_path = GameClientControl._expand_path(GAME_CONFIG.get('GAME_PATH', ''))
+        alternative_path = GameClientControl._expand_path(GAME_CONFIG.get('GAME_ALTERNATIVE_PATH', ''))
         
+        # Try primary path first
         if not game_path or game_path == "/path/to/RebirthRC.exe":
-            print("Error: GAME_PATH not configured. Please set GAME_PATH in config.py or .env file.")
-            return False
+            print("Warning: Primary GAME_PATH not configured. Trying alternative path...")
+            game_path = None
         
-        if not os.path.exists(game_path):
-            print(f"Error: Game executable not found at {game_path}")
+        # Check if primary path exists
+        if game_path and os.path.exists(game_path):
+            print(f"Using primary game path: {game_path}")
+        elif alternative_path and os.path.exists(alternative_path):
+            print(f"Primary path not found. Using alternative path: {alternative_path}")
+            game_path = alternative_path
+        else:
+            print(f"Error: Game executable not found at primary path: {GAME_CONFIG.get('GAME_PATH', 'N/A')}")
+            if alternative_path:
+                print(f"Error: Game executable not found at alternative path: {alternative_path}")
+            print("Please set GAME_PATH in config.py or .env file.")
             return False
         
         print(f"Launching game from: {game_path}")
